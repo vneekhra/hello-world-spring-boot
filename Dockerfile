@@ -1,6 +1,5 @@
-FROM java
-ADD ./target/myproject-0.0.1-SNAPSHOT.jar /myproject-0.0.1-SNAPSHOT.jar
-ADD ./run.sh /run.sh
-RUN chmod a+x /run.sh
-EXPOSE 80:80
-CMD /run.sh
+FROM java:8
+EXPOSE 8080
+ADD ./target/myproject-0.0.1-SNAPSHOT.jar app.jar
+RUN sh -c 'touch /app.jar'
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]

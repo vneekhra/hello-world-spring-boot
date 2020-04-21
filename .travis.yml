@@ -10,7 +10,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker-springboot-hello"
-  env: "DockerSpringbootHello-env"
+  env: "DockerSpringbootHello-env-1"
   bucket_name: elasticbeanstalk-us-east-2-424816399131
   bucket_path: "docker-springboot-hello"
   on:
